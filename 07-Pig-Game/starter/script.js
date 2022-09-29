@@ -7,7 +7,10 @@ const newGame = document.querySelector('.btn--new');
 
 // Players score
 const scoreEl0 = document.querySelector('#score--0');
+const currentScoreEl0 = document.querySelector('.current--0');
+
 const scoreEl1 = document.querySelector('#score--1');
+const currentScoreEl1 = document.querySelector('.current--1');
 
 // Dice
 const diceEl = document.querySelector('.dice');
@@ -21,6 +24,9 @@ diceEl.classList.add('hidden');
 let scoreP1 = 0;
 let scoreP2 = 0;
 
+let currentScoreP1 = 0;
+let currentScoreP2 = 0;
+
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
@@ -32,8 +38,8 @@ diceRoll.addEventListener('click', function () {
 
   // 3 - Adds score to current player if the dice roll equals 1
   if (dice !== 1) {
-    scoreP1 += dice;
-    scoreEl0.textContent = scoreP1;
+    currentScoreP1 += dice;
+    currentScoreEl0.textContent = scoreP1; // Change later
   } else {
   }
 });
