@@ -23,5 +23,6 @@ diceRoll.addEventListener('click', function () {
   let dice = Math.trunc(Math.random() * 6) + 1;
 
   // 2 - Show that number on the dice
+  diceEl.classList.remove('hidden');
   diceEl.src = `dice-${dice}.png`;
 });
