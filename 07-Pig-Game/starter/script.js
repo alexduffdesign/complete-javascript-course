@@ -17,6 +17,10 @@ scoreEl0.textContent = 0;
 scoreEl1.textContent = 0;
 diceEl.classList.add('hidden');
 
+// scores
+let scoreP1 = 0;
+let scoreP2 = 0;
+
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
@@ -25,5 +29,10 @@ diceRoll.addEventListener('click', function () {
   // 2 - Show that number on the dice
   diceEl.classList.remove('hidden');
   diceEl.src = `dice-${dice}.png`;
-  console.log(dice);
+
+  // 3 - Adds score to current player if the dice roll equals 1
+  if (dice !== 1) {
+    scoreP1 += dice;
+  } else {
+  }
 });
