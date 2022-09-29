@@ -7,10 +7,10 @@ const newGame = document.querySelector('.btn--new');
 
 // Players score
 const scoreEl0 = document.querySelector('#score--0');
-const currentScoreEl0 = document.querySelector('.current--0');
+const currentScoreEl0 = document.querySelector('current--0');
 
 const scoreEl1 = document.querySelector('#score--1');
-const currentScoreEl1 = document.querySelector('.current--1');
+const currentScoreEl1 = document.querySelector('current--1');
 
 // Dice
 const diceEl = document.querySelector('.dice');
