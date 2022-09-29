@@ -41,7 +41,7 @@ diceRoll.addEventListener('click', function () {
   // 3 - Adds score to current player if the dice roll equals 1
   if (dice !== 1) {
     currentScore += dice;
-    document.querySelector(`current--${activePlayer}`).textContent =
+    document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
     activePlayer = activePlayer === 0 ? 1 : 0;
