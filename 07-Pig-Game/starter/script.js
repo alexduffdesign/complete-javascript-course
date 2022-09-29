@@ -39,7 +39,7 @@ diceRoll.addEventListener('click', function () {
   // 3 - Adds score to current player if the dice roll equals 1
   if (dice !== 1) {
     currentScoreP1 += dice;
-    currentScoreEl0.textContent = scoreP1; // Change later
+    currentScoreEl0.textContent = currentScoreP1; // Change later
   } else {
   }
 });
