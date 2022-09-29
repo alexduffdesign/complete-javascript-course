@@ -15,7 +15,7 @@ const diceEl = document.querySelector('.dice');
 // Default values
 scoreEl0.textContent = 0;
 scoreEl1.textContent = 0;
-dice.classList.add('hidden');
+diceEl.classList.add('hidden');
 
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
