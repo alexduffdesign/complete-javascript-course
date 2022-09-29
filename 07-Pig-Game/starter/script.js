@@ -25,4 +25,5 @@ diceRoll.addEventListener('click', function () {
   // 2 - Show that number on the dice
   diceEl.classList.remove('hidden');
   diceEl.src = `dice-${dice}.png`;
+  console.log(dice);
 });
