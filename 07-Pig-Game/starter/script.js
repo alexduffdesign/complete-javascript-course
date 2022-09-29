@@ -45,5 +45,6 @@ diceRoll.addEventListener('click', function () {
       currentScore;
   } else {
     activePlayer = activePlayer === 0 ? 1 : 0;
+    currentScore = 0;
   }
 });
