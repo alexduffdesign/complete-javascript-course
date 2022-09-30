@@ -60,5 +60,7 @@ hold.addEventListener('click', function () {
     scores[activePlayer];
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
   // Check if their score is already 100
 });
