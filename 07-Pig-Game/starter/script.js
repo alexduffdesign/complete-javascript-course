@@ -29,6 +29,15 @@ const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 
+// Change Player Function
+const changePlayer = function () {
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+};
+
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
@@ -44,21 +53,18 @@ diceRoll.addEventListener('click', function () {
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    currentScore = 0;
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    player0El.classList.toggle('player--active');
-    player1El.classList.toggle('player--active');
+    changePlayer();
   }
 });
 
+// Clicking Hold
 hold.addEventListener('click', function () {
   // Add the current score to the active player
 
   scores[activePlayer] += currentScore;
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
-  player0El.classList.toggle('player--active');
-  player1El.classList.toggle('player--active');
+  changePlayer();
+
   // Check if their score is already 100
 });
