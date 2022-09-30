@@ -61,10 +61,16 @@ diceRoll.addEventListener('click', function () {
 hold.addEventListener('click', function () {
   // Add the current score to the active player
 
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  changePlayer();
+  if (!scores[activePlayer] >= 20) {
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    changePlayer();
+  } else {
+    document
+      .querySelector(`player--${activePlayer}`)
+      .classList.add('player--winner');
+  }
 
   // Check if their score is already 100
 });
