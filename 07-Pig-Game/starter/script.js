@@ -61,7 +61,7 @@ diceRoll.addEventListener('click', function () {
 hold.addEventListener('click', function () {
   // Add the current score to the active player
 
-  if (!scores[activePlayer] >= 20) {
+  if (!scores[activePlayer] >= 30) {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
