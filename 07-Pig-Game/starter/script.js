@@ -51,3 +51,14 @@ diceRoll.addEventListener('click', function () {
     player1El.classList.toggle('player--active');
   }
 });
+
+hold.addEventListener('click', function () {
+  // Add the current score to the active player
+
+  scores[activePlayer] += currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+  // Check if their score is already 100
+});
