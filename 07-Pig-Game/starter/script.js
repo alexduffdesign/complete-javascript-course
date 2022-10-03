@@ -19,16 +19,18 @@ const currentScoreEl1 = document.querySelector('#current--1');
 const diceEl = document.querySelector('.dice');
 
 // Scores
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+let scores, currentScore, activePlayer, playing;
 
 const init = function () {
   // Default values
   scoreEl0.textContent = 0;
   scoreEl1.textContent = 0;
   diceEl.classList.add('hidden');
+
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
 
   scoreEl0.textContent = 0;
   scoreEl1.textContent = 0;
