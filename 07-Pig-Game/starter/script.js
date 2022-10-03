@@ -63,6 +63,7 @@ diceRoll.addEventListener('click', function () {
 // Clicking Hold
 hold.addEventListener('click', function () {
   if ((playing = true)) {
+    // Player Wins
     if (scores[activePlayer] >= 20) {
       // 1 - Add class to winning Player
       document
@@ -71,7 +72,10 @@ hold.addEventListener('click', function () {
 
       // 2 - Diactivate being able to play
       playing = false;
-    } else {
+    }
+
+    // Player Looses
+    else {
       // Add the current score to the active player
       scores[activePlayer] += currentScore;
       document.getElementById(`score--${activePlayer}`).textContent =
@@ -98,5 +102,5 @@ newGame.addEventListener('click', function () {
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
-  scores = [0, 0];
+  scores[activePlayer] = 0;
 });
