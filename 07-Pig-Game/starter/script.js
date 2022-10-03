@@ -102,5 +102,5 @@ newGame.addEventListener('click', function () {
   document
     .querySelector(`.player--${activePlayer}`)
     .classList.remove('player--winner');
-  scores[activePlayer] = 0;
+  scores[(0, 0)] = [0, 0];
 });
