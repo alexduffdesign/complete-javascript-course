@@ -60,13 +60,10 @@ diceRoll.addEventListener('click', function () {
 // Clicking Hold
 hold.addEventListener('click', function () {
   // Add the current score to the active player
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
 
   changePlayer();
 
-  if (scores[activePlayer] >= 30) {
+  if (scores[activePlayer] >= 20) {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--winner');
@@ -75,6 +72,9 @@ hold.addEventListener('click', function () {
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active');
   } else {
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
     changePlayer();
   }
 
