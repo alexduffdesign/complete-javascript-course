@@ -28,6 +28,7 @@ player1El.classList.add();
 const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 
 // Change Player Function
 const changePlayer = function () {
@@ -41,19 +42,22 @@ const changePlayer = function () {
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
-  let dice = Math.trunc(Math.random() * 6) + 1;
 
-  // 2 - Show that number on the dice
-  diceEl.classList.remove('hidden');
-  diceEl.src = `dice-${dice}.png`;
+  if ((playing = true)) {
+    let dice = Math.trunc(Math.random() * 6) + 1;
 
-  // 3 - Adds score to current player if the dice roll equals 1
-  if (dice !== 1) {
-    currentScore += dice;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    changePlayer();
+    // 2 - Show that number on the dice
+    diceEl.classList.remove('hidden');
+    diceEl.src = `dice-${dice}.png`;
+
+    // 3 - Adds score to current player if the dice roll equals 1
+    if (dice !== 1) {
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+      changePlayer();
+    }
   }
 });
 
@@ -65,6 +69,7 @@ hold.addEventListener('click', function () {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--winner');
+    playing = false;
 
     document
       .querySelector(`.player--${activePlayer}`)
