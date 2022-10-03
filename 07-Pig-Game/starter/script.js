@@ -75,12 +75,12 @@ diceRoll.addEventListener('click', function () {
 // Clicking Hold
 hold.addEventListener('click', function () {
   if ((playing = true)) {
-    // Player Wins
-
     // Add the current score to the active player
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
+
+    // Player Wins
 
     if (scores[activePlayer] >= 30) {
       // 1 - Add class to winning Player
