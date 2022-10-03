@@ -84,7 +84,6 @@ hold.addEventListener('click', function () {
 
 // Restart Game
 newGame.addEventListener('click', function () {
-  scores = [0, 0];
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent =
     currentScore;
