@@ -23,9 +23,6 @@ let scores, currentScore, activePlayer, playing;
 
 const init = function () {
   // Default values
-  scoreEl0.textContent = 0;
-  scoreEl1.textContent = 0;
-  diceEl.classList.add('hidden');
 
   scores = [0, 0];
   currentScore = 0;
@@ -40,6 +37,8 @@ const init = function () {
   currentScoreEl1.textContent = currentScore;
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+  player1El0.classList.remove('player--winner');
+  player1El1.classList.remove('player--winner');
 };
 
 init();
