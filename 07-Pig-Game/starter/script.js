@@ -90,8 +90,8 @@ newGame.addEventListener('click', function () {
   activePlayer = 0;
   playing = true;
   currentScore = 0;
-  document.getElementById(`current--${activePlayer}`).textContent =
-    currentScore;
+  document.getElementById(`current--0`).textContent = currentScore;
+  document.getElementById(`current--0`).textContent = currentScore;
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
   document
