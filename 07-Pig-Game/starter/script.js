@@ -18,17 +18,27 @@ const currentScoreEl1 = document.querySelector('#current--1');
 // Dice
 const diceEl = document.querySelector('.dice');
 
-// Default values
+const init = function () {
+  // Default values
+  scoreEl0.textContent = 0;
+  scoreEl1.textContent = 0;
+  diceEl.classList.add('hidden');
 
-scoreEl0.textContent = 0;
-scoreEl1.textContent = 0;
-diceEl.classList.add('hidden');
+  // Scores
+  const scores = [0, 0];
+  let currentScore = 0;
+  let activePlayer = 0;
+  let playing = true;
 
-// Scores
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+  scoreEl0.textContent = 0;
+  scoreEl1.textContent = 0;
+  diceEl.classList.add('hidden');
+
+  document.getElementById(`current--0`).textContent = currentScore;
+  document.getElementById(`current--0`).textContent = currentScore;
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
+};
 
 // Change Player Function
 const changePlayer = function () {
@@ -88,19 +98,4 @@ hold.addEventListener('click', function () {
 });
 
 // Restart Game
-newGame.addEventListener('click', function () {
-  scoreEl0.textContent = 0;
-  scoreEl1.textContent = 0;
-  diceEl.classList.add('hidden');
-  activePlayer = 0;
-  playing = true;
-  currentScore = 0;
-  document.getElementById(`current--0`).textContent = currentScore;
-  document.getElementById(`current--0`).textContent = currentScore;
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove('player--winner');
-  scores[(0, 0)] = [0, 0];
-});
+newGame.addEventListener('click', init());
