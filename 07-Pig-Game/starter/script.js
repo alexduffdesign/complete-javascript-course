@@ -77,7 +77,7 @@ diceRoll.addEventListener('click', function () {
 hold.addEventListener('click', function () {
   if ((playing = true)) {
     // Player Wins
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 30) {
       // 1 - Add class to winning Player
       document
         .querySelector(`.player--${activePlayer}`)
