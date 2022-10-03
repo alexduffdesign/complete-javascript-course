@@ -102,4 +102,4 @@ hold.addEventListener('click', function () {
 });
 
 // Restart Game
-newGame.addEventListener('click', init());
+newGame.addEventListener('click', init);
