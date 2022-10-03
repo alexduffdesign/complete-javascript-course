@@ -34,8 +34,8 @@ const init = function () {
   scoreEl1.textContent = 0;
   diceEl.classList.add('hidden');
 
-  document.getElementById(`current--0`).textContent = currentScore;
-  document.getElementById(`current--0`).textContent = currentScore;
+  currentScoreEl0.textContent = currentScore;
+  currentScoreEl1.textContent = currentScore;
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
 };
