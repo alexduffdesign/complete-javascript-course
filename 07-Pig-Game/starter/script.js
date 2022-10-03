@@ -82,10 +82,6 @@ hold.addEventListener('click', function () {
   }
 });
 
-const removeWinner = function (a, b) {
-  a.classList.remove('player--winner');
-  b.classList.remove('player--winner');
-};
 // Restart Game
 newGame.addEventListener('click', function () {
   scoreEl0.textContent = 0;
@@ -96,5 +92,7 @@ newGame.addEventListener('click', function () {
   currentScore = 0;
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
-  removeWinner(player0El, player1El);
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
 });
