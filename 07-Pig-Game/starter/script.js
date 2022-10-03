@@ -25,7 +25,7 @@ scoreEl1.textContent = 0;
 diceEl.classList.add('hidden');
 
 // Scores
-let scores = [0, 0];
+const scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
@@ -62,21 +62,22 @@ diceRoll.addEventListener('click', function () {
 
 // Clicking Hold
 hold.addEventListener('click', function () {
-  // Add the current score to the active player
   if ((playing = true)) {
     if (scores[activePlayer] >= 20) {
+      // 1 - Add class to winning Player
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add('player--winner');
-      playing = false;
 
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.remove('player--active');
+      // 2 - Diactivate being able to play
+      playing = false;
     } else {
+      // Add the current score to the active player
       scores[activePlayer] += currentScore;
       document.getElementById(`score--${activePlayer}`).textContent =
         scores[activePlayer];
+
+      // 3 - Change the Player after holding
       changePlayer();
     }
   }
@@ -86,8 +87,8 @@ hold.addEventListener('click', function () {
 newGame.addEventListener('click', function () {
   scoreEl0.textContent = 0;
   scoreEl1.textContent = 0;
+  scores = [0, 0];
   diceEl.classList.add('hidden');
-  scores[(0, 0)];
   activePlayer = 0;
   playing = true;
   currentScore = 0;
