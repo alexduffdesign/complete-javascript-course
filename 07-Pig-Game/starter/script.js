@@ -82,8 +82,9 @@ hold.addEventListener('click', function () {
   }
 });
 
-const removeWinner = function (winner) {
-  winner.classList.remove('player--winner');
+const removeWinner = function (a, b) {
+  a.classList.remove('player--winner');
+  b.classList.remove('player--winner');
 };
 // Restart Game
 newGame.addEventListener('click', function () {
