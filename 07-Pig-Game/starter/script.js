@@ -43,7 +43,7 @@ const changePlayer = function () {
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
 
-  if ((playing = true)) {
+  if (playing) {
     let dice = Math.trunc(Math.random() * 6) + 1;
 
     // 2 - Show that number on the dice
