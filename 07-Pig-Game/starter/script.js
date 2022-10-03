@@ -24,7 +24,6 @@ scoreEl0.textContent = 0;
 scoreEl1.textContent = 0;
 diceEl.classList.add('hidden');
 
-defaultValues();
 // Scores
 const scores = [0, 0];
 let currentScore = 0;
