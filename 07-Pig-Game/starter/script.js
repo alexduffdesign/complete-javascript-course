@@ -20,12 +20,9 @@ const diceEl = document.querySelector('.dice');
 
 // Default values
 
-const defaultValues = function () {
-  scoreEl0.textContent = 0;
-  scoreEl1.textContent = 0;
-  diceEl.classList.add('hidden');
-  currentScore = 0;
-};
+scoreEl0.textContent = 0;
+scoreEl1.textContent = 0;
+diceEl.classList.add('hidden');
 
 defaultValues();
 // Scores
@@ -88,5 +85,12 @@ hold.addEventListener('click', function () {
 
 // Restart Game
 newGame.addEventListener('click', function () {
-  defaultValues();
+  scoreEl0.textContent = 0;
+  scoreEl1.textContent = 0;
+  diceEl.classList.add('hidden');
+  activePlayer = 0;
+  playing = true;
+  currentScore = 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
 });
