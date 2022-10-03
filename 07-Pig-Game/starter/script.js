@@ -80,5 +80,20 @@ hold.addEventListener('click', function () {
       changePlayer();
     }
   }
-  // Check if their score is already 100
+});
+
+// Restart Game
+newGame.addEventListener('click', function () {
+  scores = [0, 0];
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  activePlayer = 0;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+  playing = true;
+
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove('player--winner');
 });
