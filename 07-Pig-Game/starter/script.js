@@ -66,7 +66,7 @@ hold.addEventListener('click', function () {
 
   changePlayer();
 
-  if (scores[activePlayer] >= 100) {
+  if (scores[activePlayer] >= 30) {
     document
       .querySelector(`player--${activePlayer}`)
       .classList.add('player--winner');
