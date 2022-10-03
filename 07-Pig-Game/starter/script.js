@@ -61,8 +61,6 @@ diceRoll.addEventListener('click', function () {
 hold.addEventListener('click', function () {
   // Add the current score to the active player
 
-  changePlayer();
-
   if (scores[activePlayer] >= 20) {
     document
       .querySelector(`.player--${activePlayer}`)
