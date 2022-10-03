@@ -42,7 +42,6 @@ const changePlayer = function () {
 // Clicking Roll
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
-
   if (playing) {
     let dice = Math.trunc(Math.random() * 6) + 1;
 
@@ -64,22 +63,22 @@ diceRoll.addEventListener('click', function () {
 // Clicking Hold
 hold.addEventListener('click', function () {
   // Add the current score to the active player
+  if ((playing = true)) {
+    if (scores[activePlayer] >= 20) {
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
+      playing = false;
 
-  if (scores[activePlayer] >= 20) {
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.add('player--winner');
-    playing = false;
-
-    document
-      .querySelector(`.player--${activePlayer}`)
-      .classList.remove('player--active');
-  } else {
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent =
-      scores[activePlayer];
-    changePlayer();
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove('player--active');
+    } else {
+      scores[activePlayer] += currentScore;
+      document.getElementById(`score--${activePlayer}`).textContent =
+        scores[activePlayer];
+      changePlayer();
+    }
   }
-
   // Check if their score is already 100
 });
