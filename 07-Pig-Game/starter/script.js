@@ -86,7 +86,7 @@ hold.addEventListener('click', function () {
 newGame.addEventListener('click', function () {
   scoreEl0.textContent = 0;
   scoreEl1.textContent = 0;
-  scores = 0;
+  scores = [0, 0];
   diceEl.classList.add('hidden');
   activePlayer = 0;
   playing = true;
