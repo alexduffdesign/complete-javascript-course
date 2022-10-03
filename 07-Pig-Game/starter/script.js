@@ -56,13 +56,13 @@ const changePlayer = function () {
 diceRoll.addEventListener('click', function () {
   // 1 - Generating random dice number between 1-6
   if (playing) {
-    let dice = Math.trunc(Math.random() * 6) + 1;
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
     // 2 - Show that number on the dice
     diceEl.classList.remove('hidden');
     diceEl.src = `dice-${dice}.png`;
 
-    // 3 - Adds score to current player if the dice roll equals 1
+    // 3 - Adds score to current player if the dice roll doesnt equal 1
     if (dice !== 1) {
       currentScore += dice;
       document.getElementById(`current--${activePlayer}`).textContent =
