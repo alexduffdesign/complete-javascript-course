@@ -90,6 +90,6 @@ newGame.addEventListener('click', function () {
   activePlayer = 0;
   playing = true;
   currentScore = 0;
-  player0El.classList.toggle('player--active');
-  player1El.classList.toggle('player--active');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 });
