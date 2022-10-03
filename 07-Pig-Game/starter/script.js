@@ -74,6 +74,8 @@ hold.addEventListener('click', function () {
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active');
+  } else {
+    changePlayer();
   }
 
   // Check if their score is already 100
