@@ -40,6 +40,8 @@ const init = function () {
   player1El.classList.remove('player--active');
 };
 
+init();
+
 // Change Player Function
 const changePlayer = function () {
   currentScore = 0;
